@@ -2,6 +2,7 @@ package com.e.ishar.front_end;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -43,6 +44,17 @@ public class UploadActivity extends AppCompatActivity {
         Uploadt = (Button)findViewById(R.id.uploadBt);
         imgView = (ImageView)findViewById((R.id.imgView));
 
+        String imgPath = getIntent().getStringExtra("image_path");
+        if(imgPath != null)
+        {
+            bitmap = BitmapFactory.decodeFile(getIntent().getStringExtra("image_path"));
+            imgView.setImageBitmap(bitmap);
+            imgView.setVisibility(View.VISIBLE);
+        }
+
+
+
+
     }
 
     public void openGalleryAndChoose(View view)
@@ -81,16 +93,18 @@ public class UploadActivity extends AppCompatActivity {
                             Toast.makeText(UploadActivity.this,"response is " + response , Toast.LENGTH_LONG).show();
                             JSONObject jsonObject = new JSONObject(response);
                             String resp = jsonObject.getString("res");
-//                            Toast.makeText(UploadActivity.this, "Other " + resp, Toast.LENGTH_SHORT).show();
+                            String prob = jsonObject.getString("prob");
+//                            Toast.makeText(UploadActivity.this, "Other " + prob, Toast.LENGTH_SHORT).show();
                             imgView.setImageResource(0);
                             imgView.setVisibility(View.GONE);
 
                             Intent intent = new Intent(UploadActivity.this,ResultActivity.class);
                             intent.putExtra("Response",resp);
+                            intent.putExtra("Probability",prob);
                             startActivity(intent);
 
                         } catch (JSONException e) {
-//                            Toast.makeText(MainActivity.this, "error occured here", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(UploadActivity.this, "error occured here", Toast.LENGTH_SHORT).show();
                             e.printStackTrace();
                         }
 
@@ -98,7 +112,7 @@ public class UploadActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(),"Error occured", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),error.getMessage(), Toast.LENGTH_LONG).show();
             }
         })
 

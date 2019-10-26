@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void changeActivity(View view)
     {
-        Intent intent = new Intent(MainActivity.this,UploadActivity.class);
+        Intent intent = new Intent(MainActivity.this,CameraActivity.class);
         startActivity(intent);
     }
 
