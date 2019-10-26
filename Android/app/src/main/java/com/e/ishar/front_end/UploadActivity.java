@@ -73,17 +73,22 @@ public class UploadActivity extends AppCompatActivity {
 
     public void uploadImage(View view)
     {
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, uploadUrl,
+        final StringRequest stringRequest = new StringRequest(Request.Method.POST, uploadUrl,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
                             Toast.makeText(UploadActivity.this,"response is " + response , Toast.LENGTH_LONG).show();
                             JSONObject jsonObject = new JSONObject(response);
-                            String resp = jsonObject.getString("response");
-                            Toast.makeText(UploadActivity.this, "Other " + resp, Toast.LENGTH_SHORT).show();
+                            String resp = jsonObject.getString("res");
+//                            Toast.makeText(UploadActivity.this, "Other " + resp, Toast.LENGTH_SHORT).show();
                             imgView.setImageResource(0);
                             imgView.setVisibility(View.GONE);
+
+                            Intent intent = new Intent(UploadActivity.this,ResultActivity.class);
+                            intent.putExtra("Response",resp);
+                            startActivity(intent);
+
                         } catch (JSONException e) {
 //                            Toast.makeText(MainActivity.this, "error occured here", Toast.LENGTH_SHORT).show();
                             e.printStackTrace();

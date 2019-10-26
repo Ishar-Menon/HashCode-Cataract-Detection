@@ -17,10 +17,10 @@ def success():
         # f.save(f.filename)
         f = request.get_json()
         elem = request.form['image']
-        
+        midString = "'res':'{}'".format("True")
         # data = f['image']
         convert_and_save(elem)  
-        return "{'response': 'hello world'}" 
+        return "{"+midString+ "}" 
   
 if __name__ == '__main__':  
     app.run(host='0.0.0.0')  
