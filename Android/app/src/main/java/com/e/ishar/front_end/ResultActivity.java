@@ -17,8 +17,8 @@ public class ResultActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String res = intent.getStringExtra("Response");
         String prob = intent.getStringExtra("Probability");
-        txt1.setText(res);
-        txt2.setText(prob);
+        txt1.setText("Result "+ res);
+        txt2.setText("Probability "+prob);
         Toast.makeText(this, "Result activity " + res + " " + prob, Toast.LENGTH_SHORT).show();
     }
 
