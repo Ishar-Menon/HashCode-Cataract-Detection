@@ -10,16 +10,54 @@
         android:id="@+id/res"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="102dp"
+        android:layout_marginTop="11dp"
+        android:text="Result:"
         android:textSize="24sp" />
 
     <TextView
         android:id="@+id/prob"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/res"
+        android:layout_marginTop="20dp"
+        android:text="Probability:"
         android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/prob"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="68dp"
+        android:text=""
+        android:textStyle="italic"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/symptoms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/result"
+        android:layout_marginTop="84dp"
+        android:textStyle="italic"
+        android:text="Signs and Symptoms:\n
+1. Clouded, blurred or dim vision\n
+2. Increasing difficulty with vision at
+\tnight\n
+3. Sensitivity to light and glare\n
+4. Need for brighter light for reading
+\tand other activities\n
+5. Fading or yellowing of colors\n
+6. Frequent changes in eyeglass or
+\tcontact lens prescription\n
+7. Double vision in a single eye\n
+8. Seeing 'halos' around lights\n"
+        android:textSize="20sp"
+        android:visibility="gone" />
 </RelativeLayout>

@@ -34,10 +34,10 @@
         android:layout_marginStart="148dp"
         android:layout_marginTop="124dp"
         android:background="#09f"
+        android:textStyle="italic"
         android:onClick="changeActivity"
         android:text="Lets Go"
         android:textColor="#fff"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 

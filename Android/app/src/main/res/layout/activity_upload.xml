@@ -26,6 +26,8 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/imgView"
         android:layout_marginTop="61dp"
+        android:background="#09f"
+        android:textColor="#fff"
         android:onClick="openGalleryAndChoose"
         android:text="Choose Image" />
 
@@ -36,6 +38,8 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/chBt"
         android:layout_marginTop="20dp"
+        android:background="#09f"
+        android:textColor="#fff"
         android:onClick="uploadImage"
         android:text="Upload Image" />
 </RelativeLayout>

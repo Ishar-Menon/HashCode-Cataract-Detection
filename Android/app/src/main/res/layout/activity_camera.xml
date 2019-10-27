@@ -6,23 +6,52 @@
     android:layout_height="match_parent"
     tools:context="com.e.ishar.front_end.CameraActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="343dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="32dp"
+        android:background="#09f"
+        android:gravity="center"
+        android:text="Take a picture or choose later"
+        android:textColor="#fff"
+        android:textSize="29sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
     <Button
         android:id="@+id/cpBt"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="49dp"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="37dp"
+        android:background="#09f"
         android:onClick="captureImage"
-        android:text="Capture Image" />
+        android:text="Capture Image"
+        android:textColor="#fff"
+        android:textStyle="italic" />
 
     <Button
         android:id="@+id/dispBt"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/cpBt"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="39dp"
+        android:layout_alignBaseline="@+id/cpBt"
+        android:layout_alignBottom="@+id/cpBt"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
         android:onClick="uploadImage"
-        android:text="Move to upload" />
+        android:textColor="#fff"
+        android:background="#09f"
+        android:text="Move to upload"
+        android:textStyle="italic" />
 </RelativeLayout>
